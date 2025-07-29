@@ -18,8 +18,8 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "react-jsx",
-       "paths": {
-      "react": [
+        "paths": {
+        "react": [
         "./node_modules/@types/react"
       ]
     }
