@@ -18,10 +18,11 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "react-jsx",
-        "types": [
-            "jest",
-            "@testing-library/jest-dom"
-        ]
+       "paths": {
+      "react": [
+        "./node_modules/@types/react"
+      ]
+    }
     },
     "include": [
         "src",
