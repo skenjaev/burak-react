@@ -1,18 +1,21 @@
 .home-navbar {
     width: 100%;
     height: 773px;
+
     display: flex;
     background: url("/public/img/banner.webp");
     background-size: cover;
 }
 
 .home-navbar .navbar-container {
-    margin-top: 55px;
     height: 642px;
+
+    margin-top: 55px;
 }
 
 .home-navbar .navbar-container .menu {
     height: 50px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,24 +27,26 @@
     height: 30px;
 }
 
-.home-navbar .navbar-container .menu .links {
+.home-navbar .navbar-container .menu  .links{
     min-width: 700px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.home-navbar .navbar-container .menu .links .login-button {
-    background: #3776CC;
-    color: #f8f8ff;
+
+.home-navbar .navbar-container .menu .links .login-button{
+   background: #3776cc;
+   color: #f8f8ff;
 }
 
-.home-navbar .navbar-container .menu .user-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 24px;
-}
+.home-navbar .navbar-container .menu .links .user-avatar{
+   width: 50px;
+   height: 50px;
+   border-radius: 24px;
+ } 
 
 .home-navbar a {
     text-decoration: none;
@@ -58,6 +63,7 @@
     border-bottom: solid 2px #d7b686;
 }
 
+/* bu yaxshi example copy pass qilsa boladi doim */
 .home-navbar .hover-line:after {
     display: block;
     content: "";
@@ -70,13 +76,17 @@
     transform: scaleX(1);
 }
 
-.home-navbar div .hover-line:after {
+.home-navbar div.hover-line:after {
     transform-origin: 0% 50%;
 }
 
+/* hover qiladi ________ */
+
+
 .home-navbar .navbar-container .header-frame {
-    margin-top: 142px;
     height: 462px;
+
+    margin-top: 142px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -84,13 +94,17 @@
 
 .home-navbar .navbar-container .header-frame .detail {
     width: 510px;
+    /* height: 370px; */
+
     display: flex;
     flex-direction: column;
 }
 
-.home-navbar .navbar-container .header-frame .detail .head-main-txt {
+
+.home-navbar .navbar-container .header-frame .head-main-txt {
     width: 450px;
     height: 150px;
+
     font-family: "Roboto Serif";
     font-size: 50px;
     font-style: normal;
@@ -100,9 +114,10 @@
     color: #f8f8ff;
 }
 
-.home-navbar .navbar-container .header-frame .detail .wel-txt {
+.home-navbar .navbar-container .header-frame .wel-txt {
     width: 510px;
     height: 42px;
+   
     font-family: "Roboto Serif";
     font-size: 36px;
     font-style: normal;
@@ -110,12 +125,13 @@
     line-height: normal;
     letter-spacing: -0.54px;
     color: #d7b686;
-}
-
-.home-navbar .navbar-container .header-frame .detail .service-txt {
-    margin-top: 23px;
-    width: 153px;
+   }
+   
+   .home-navbar .navbar-container .header-frame .service-txt {
+    width: 152px;
     height: 23px;
+   
+    margin-top: 23px;
     font-family: "Roboto Serif";
     font-size: 20px;
     font-style: normal;
@@ -123,51 +139,51 @@
     line-height: normal;
     letter-spacing: -0.3px;
     color: #d5d5d5;
-}
+   }
 
-.home-navbar .navbar-container .detail .signup {
+   .home-navbar .navbar-container .detail .signup {
     margin-top: 73px;
-}
+   }
 
-.home-navbar .navbar-container .detail .signup .signup-button {
+   .home-navbar .navbar-container .detail .signup .signup-button{
     width: 210px;
     height: 60px;
-    border-radius: 4px;
+
     background: #1976d2;
     text-align: center;
-    font-family: Poppins;
+    font-family: Pappins;
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: #d5d5d5;
-}
+    color: #f8f8ff;
+   }
 
-.home-navbar .navbar-container .logo-frame {
-    margin-top: 43px;
+   .home-navbar .navbar-container .logo-frame {
     width: 690px;
     height: 419px;
-}
 
-.home-navbar .navbar-container .logo-frame .logo-img {
+    margin-top: 43px;
+   }
+
+   .home-navbar .navbar-container .logo-frame .logo-img{
     width: 100%;
     height: 100%;
+    
     background: url("/public/img/logo.webp");
     background-size: contain;
     background-repeat: no-repeat;
-    filter: invert(25%);
-}
+    filter: invert(20%);
+   }
 
 
 
+   /* Other Mavbar */
 
-
-
-
-
-.other-navbar {
+   .other-navbar {
     width: 100%;
     height: 400px;
+
     display: flex;
     background: url("/public/img/banner.webp");
     background-size: cover;
@@ -179,6 +195,7 @@
 
 .other-navbar .navbar-container .menu {
     height: 50px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -190,24 +207,26 @@
     height: 30px;
 }
 
-.other-navbar .navbar-container .menu .links {
+.other-navbar .navbar-container .menu  .links{
     min-width: 700px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.other-navbar .navbar-container .menu .links .login-button {
-    background: #3776CC;
-    color: #f8f8ff;
+
+.other-navbar .navbar-container .menu .links .login-button{
+   background: #3776cc;
+   color: #f8f8ff;
 }
 
-.other-navbar .navbar-container .menu .user-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 24px;
-}
+.other-navbar .navbar-container .menu .links .user-avatar{
+   width: 50px;
+   height: 50px;
+   border-radius: 24px;
+ } 
 
 .other-navbar a {
     text-decoration: none;
@@ -224,6 +243,7 @@
     border-bottom: solid 2px #d7b686;
 }
 
+/* bu yaxshi example copy pass qilsa boladi doim */
 .other-navbar .hover-line:after {
     display: block;
     content: "";
@@ -236,10 +256,9 @@
     transform: scaleX(1);
 }
 
-.other-navbar div .hover-line:after {
+.other-navbar div.hover-line:after {
     transform-origin: 0% 50%;
 }
-
 
 /* BASKET */
 

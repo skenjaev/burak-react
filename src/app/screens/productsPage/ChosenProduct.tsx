@@ -1,3 +1,5 @@
-export default function ChosenProduct() {
-    return <div>ChosenProduct</div>
+
+
+export default function ChosenProduct () {
+    return (<div>ChosenProduct</div>)
 }
