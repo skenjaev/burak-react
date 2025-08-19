@@ -4,7 +4,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Settings } from "./Settings";
-import "../../../css/userPage.css";
+import "../../../css/user-page.css";
 
 export default function UserPage() {
   return (
