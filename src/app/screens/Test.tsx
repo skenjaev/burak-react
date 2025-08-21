@@ -1,5 +1,8 @@
 // @ts-nocheck
-import React, { Component } from "react";
+
+
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom/client';
 
 class Test extends Component {
   constructor(props) {
@@ -8,47 +11,48 @@ class Test extends Component {
       brand: "Ford",
       model: "Mustang",
       color: "red",
-      year: 1964,
+      year: 1964
     };
   }
   changeDetail = () => {
-    this.setState({
-      color: "blue",
-      brand: "Tesla",
-      model: "Model S",
-      year: 2023,
-    });
-  };
+    this.setState({color: "blue", model: "Model S", year: "2023", brand: "Tesla"});
+   }
 
-  componentDidMount(): void {
-    console.log("Component did mount");
-    // runs after first render
-  }
+    // lifecycle methods
 
-  componentWillUnmount(): void {
-    console.log("Component will unmount");
-    // runs before component unmount
-  }
+    componentDidMount() {
+      console.log("componentDidMount");
+      // runs after the first Render  => RETRIEVE DATA FROM BACKEND SERVER
+    }
 
-  componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
-    console.log("Component did update");
-    // runs after state changes
-  }
+    componentWillUnmount() {
+      console.log("componentWillUnmount");
+      // runs before componennt unmount
+    }
+
+    componentDidUpdate(){
+      console.log("componentDidUpdate");
+    }
 
   render() {
     return (
       <div>
         <h1>My {this.state.brand}</h1>
         <p>
-          Color: {this.state.color} - Model: {this.state.model}
-          from {this.state.year}.
+          Color: {this.state.color} - Model: {this.state.model} from {""}{this.state.year}
         </p>
-        <button type="button" onClick={this.changeDetail}>
-          Change Detail
+        <button
+          type="button"
+          onClick={this.changeDetail}
+        >Change detail
         </button>
       </div>
     );
   }
 }
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Car />);
+
 
 export default Test;

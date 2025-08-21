@@ -3,15 +3,15 @@
   height: auto;
 }
 
-/** STATISTICS**/
+/* Statistics */
 
-.homepage .static-frame {
+.homepage .static-frame{
   width: 100%;
   height: 236px;
   background: #343434;
 }
 
-.homepage .static-frame .info {
+.homepage .static-frame .info{
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.homepage .static-frame .info .static-box {
+.homepage .static-frame .info .static-box{
   width: 200px;
   height: 116px;
   display: flex;
@@ -28,7 +28,7 @@
   justify-content: center;
 }
 
-.homepage .static-frame .info .static-num {
+.homepage .static-frame .info .static-box .static-num{
   text-align: center;
   font-family: Poppins;
   font-size: 54px;
@@ -38,7 +38,7 @@
   color: #d7b686;
 }
 
-.homepage .static-frame .info .static-text {
+.homepage .static-frame .info .static-box .static-text{
   text-align: center;
   font-family: Poppins;
   font-size: 20px;
@@ -48,13 +48,57 @@
   color: #d7b586;
 }
 
-/** POPULAR DISHES**/
+/** Popular dishes  **/
 
-.homepage .popular-dishes-frame {
+.homepage .popular-dishes-frame{
   width: 100%;
   height: 580px;
   display: flex;
   background: #f8f8ff;
+
+}
+
+.homepage .popular-dishes-frame .popular-section{
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage .popular-dishes-frame .popular-section .category-title{
+  text-align: center;
+  font-family: Roboto Serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  color: #000;
+}
+
+.homepage .popular-dishes-frame .popular-section .cards-frame{
+  width: 100%;
+  margin-top: 43px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+
+.homepage .popular-dishes-frame .cards-frame .card {
+  min-height: 430px;
+  min-width: 300px;
+  cursor: pointer;
+}
+
+ .homepage .popular-dishes-frame .cards-frame .card .card-cover{
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0) 200px
+  ),
+  linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
 }
 
 .homepage .popular-dishes-frame .no-data {
@@ -64,56 +108,15 @@
   justify-content: center;
   align-items: center;
   text-transform: capitalize;
-  font-family: "Popins";
+  font-family: Poppins;
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 34px;
   color: #e3c08d;
-}
 
-.homepage .popular-dishes-frame .popular-section {
-  margin-top: 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-
-.homepage .popular-dishes-frame .popular-section .category-title {
-  text-align: center;
-  font-family: "Roboto Serif";
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: 1.44px;
-  color: #000;
-}
-
-.homepage .popular-dishes-frame .popular-section .cards-frame {
-  width: 100%;
-  margin-top: 43px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.homepage .popular-dishes-frame .cards-frame .card {
-  min-height: 430px;
-  min-width: 300px;
-  cursor: pointer;
-}
-
-.homepage .popular-dishes-frame .cards-frame .card .card-cover {
-  background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0) 200px
-    ),
-    linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
-}
-
-/** NEW PRODUCTS **/
+/** New Products  **/
 
 .homepage .new-products-frame {
   width: 100%;
@@ -122,14 +125,14 @@
   display: flex;
 }
 
-.homepage .main {
+.homepage .main{
   margin-top: 45px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.homepage .new-products-frame .category-title {
+.homepage .new-products-frame .category-title{
   font-family: "Dancing Script";
   font-style: normal;
   font-weight: 700;
@@ -137,20 +140,20 @@
   line-height: 43px;
 }
 
-.homepage .new-products-frame .main .cards-frame {
+.homepage .new-products-frame .main .cards-frame{
   width: 100%;
   margin: 47px 2px 2px 2px;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.homepage .new-products-frame .main .card {
+.homepage .new-products-frame .main .card{
   height: 335px;
   width: 290px;
   cursor: pointer;
 }
 
-.homepage .new-products-frame .product-sale {
+.homepage .new-products-frame .product-sale{
   position: absolute;
   margin-top: 10px;
   z-index: 100;
@@ -162,7 +165,7 @@
   background: #ff9200;
   box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
-  font-family: "Popins";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
@@ -170,139 +173,153 @@
   color: #f8f8ff;
 }
 
-.homepage .new-products-frame .product-detail {
-  width: auto;
-  height: 49%;
-  display: flex;
-  justify-content: center;
-  margin-top: -12px;
-  border-top: 1px solid;
-  border-color: #f8f8ff;
-  background-color: #fafbfb;
+.homepage .new-products-frame .product-detail{
+   width: auto;
+   height: 49%;
+   display: flex;
+   justify-content: center;
+   margin-top: -12px;
+   border-top: 1px solid;
+   border-color: #f8f8ff;
+   background-color: #fafbfb;
+
 }
 
-.homepage .new-products-frame .product-detail .info {
+.homepage.new-products-frame.product-detail.info {
+
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+
+}
+
+  .homepage .new-products-frame .product-detail .title {
+
+    width: 65px;
+
+    font-weight: 500;
+
+  }
+
+  .homepage.new-products-frame .product-detail .price {
+
+    margin-left: 10px;
+
+    width: 20px;
+
+    font-weight: 500;
+
+  }
+
+  .homepage.new-products-frame.product-detail.divider {
+
+    margin: 0 10px 0 10px;
+
+    width: 2px;
+
+    background-color: #d9d9d9;
+
+  }
+
+  .homepage .new-products-frame .product-detail .views {
+
+    display: flex;
+
+    align-items: center;
+
+    font-weight: 500;
+
+  }
+
+  .homepage .new-products-frame .no-data {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    color: #e3c08d;
+
+  }
+
+  /** Advertisement **/
+
+  .homepage .ads-restaurant-frame{
+    width: 100%;
+    height: 693px;
+    display: flex;
+    overflow: hidden;
+    transform: perspective(0px);
+    box-shadow: -3px 0px 20px 14px #34343480;
+  }
+
+  .homepage .ads-restaurant-frame .ads-video{
+    width: 100%;
+    background: #0c0e12;
+    display: flex;
+    box-shadow: 0px -8px 90px rgb(215 215 255);
+    transform: scale(1.5);
+    overflow: hidden;
+  }
+
+   /** Active Users **/
+
+
+ .homepage .active-users-frame {
   width: 100%;
+  height: 605px;
+  background: #f8f8ff;
   display: flex;
+ }
+
+ .homepage .active-users-frame .main {
+  width: 100%;
+  margin-top: 93px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+
+ .homepage .active-users-frame .catergory-title {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+ }
+
+ .homepage .cards-frame{
+  width: 100%;
+  margin: 47px 2px 2px 2px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
+ }
 
-.homepage .new-products-frame .product-detail .title {
-  width: 65px;
-  font-weight: 500;
-}
+ .homepage .cards-frame .card{
+    width: 305px;
+    height: auto;
+    cursor: pointer;
+ }
 
-.homepage .new-products-frame .product-detail .price {
-  margin-left: 10px;
-  width: 20px;
-  font-weight: 500;
-}
-
-.homepage .new-products-frame .product-detail .divider {
-  margin: 0 10px 0 10px;
-  width: 2px;
-  background-color: #d9d9d9;
-}
-
-.homepage .new-products-frame .product-detail .views {
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-}
-
-.homepage .new-products-frame .no-data {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: capitalize;
-  font-family: "Popins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 34px;
-  color: #e3c08d;
-}
-
-/** ADVERTISEMENT **/
-
-.homepage .ads-restaurant-frame {
-  width: 100%;
-  height: 693px;
-  display: flex;
-  overflow: hidden;
-  transform: perspective(0px);
-  box-shadow: -3px 0px 20px 14px #34343480;
-}
-
-.homepage .ads-restaurant-frame .ads-video {
-  width: 100%;
-  background: #0c0e12;
-  display: flex;
-  box-shadow: 0px -8px 90px rgb(215 215 255);
-  transform: scale(1.5);
-  overflow: hidden;
-}
-
-/** ACTIVE-USERS BURAK**/
-
-.homepage .active-users-frame {
-  background: #f8f8ff;
-  display: flex;
-  width: 100%;
-  height: 550px;
-}
-
-.homepage .active-users-frame .main {
-  flex-direction: column;
-  align-items: center;
-  padding-top: 55px;
-  display: flex;
-}
-
-.homepage .active-users-frame .category-title {
-  font-style: normal;
-  font-weight: 750;
-  font-size: 35px;
-  line-height: 40px;
-}
-
-.homepage .cards-frame {
-  width: 100%;
-  margin-top: 20px;
-  flex-direction: row;
-}
-
-.homepage .cards-frame .card {
-  margin: 10px;
-  min-height: 300px;
-  min-width: 310px;
-  cursor: pointer;
-}
-
-.homepage .cards-frame .member-nickname {
-  font-size: large;
+ .homepage .cards-frame .member-nickname{
   text-align: center;
-}
-
-.homepage .cards-frame .no-data {
-  width: 100%;
-  height: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: capitalize;
+  font-family: "Roboto Serif";
   font-style: normal;
-  font-weight: 410;
-  font-size: 35px;
-  line-height: 30px;
-  color: #e3c08d;
-}
+  font-weight: 600;
+  color: #000;
+ }
 
-/** EVENTS **/
+
+ /** EVENTS **/
 
 .homepage .events-frame {
   width: 100%;
