@@ -5,32 +5,18 @@ import { CssVarsProvider, Typography} from "@mui/joy";
 import CardOverflow from "@mui/joy/CardOverflow";
 import AspectRatio from "@mui/joy/AspectRatio";
 
+import {  useSelector } from "react-redux";
+import { createSelector } from "reselect";
+import { retrieveTopUsers } from "./selector";
+import { serverApi } from "../../../lib/config";
+import { Member } from "../../../lib/types/member";
 
-const activeUsers = [
- {memberNick: "Martin", memberImage: "/img/martin.webp"},
- {memberNick: "Justin", memberImage: "/img/justin.webp"},
- {memberNick: "John", memberImage: "/img/rose.webp"},
- {memberNick: "Edward", memberImage: "/img/nusret.webp"},
-];
+const topUsersRetriever = createSelector(retrieveTopUsers,
+  (topUsers) => ({topUsers}));
 
-// export default function ActiveUsers() {
-//   return(
-//   <div className={"active-users-frame"}>
-//     <Container>
-//       <Stack className={"main"}>
-//         <Box className={"category-title"}>Active Users</Box>
-//         <Stack className={'cards-frame'}>
-//           <CssVarsProvider>
-
-//           </CssVarsProvider>
-
-//         </Stack>
-//       </Stack>
-//     </Container>
-//   </div>);
-// }
 
 export default function ActiveUsers() {
+  const {topUsers} = useSelector(topUsersRetriever);
   return (
     <div className={"active-users-frame"}>
       <Container>
@@ -38,20 +24,25 @@ export default function ActiveUsers() {
           <Box className={"category-title"}>Active Users</Box>
           <Stack className={"cards-frame"}>
             <CssVarsProvider>
-              {activeUsers.length !== 0 ? (
-                activeUsers.map((user, index) => (
-                  <Card key={index} variant="outlined" sx={{ width: 200, textAlign: 'center', p: 2 }}>
-                    <CardOverflow>
-                      <AspectRatio ratio="1">
-                        <img src={user.memberImage} alt={user.memberNick} />
-                      </AspectRatio>
-                    </CardOverflow>
-                    <Typography>{user.memberNick}</Typography>
-                  </Card>
-                ))
-              ) : (
-                <Box className="no-data">No Active Users</Box>
-              )}
+            {topUsers.length !== 0 ? (
+              topUsers.map((member: Member) => {
+              const imagePath = `${serverApi}/${member.memberImage}`;
+              return (
+              <Card key={member._id} variant="outlined" sx={{ width:        200,           textAlign: 'center', p: 2 }}>
+                  <CardOverflow>
+                    <AspectRatio ratio="1">
+                      <img src={imagePath} alt={member.memberNick} />
+                    </AspectRatio>
+                 </CardOverflow>
+                <Typography className= {"member-nickname"}
+                >{member.memberNick}</Typography>
+            </Card>
+             );
+             })
+                ) : (
+            <Box className="no-data">No Active Users</Box>
+                )}
+
             </CssVarsProvider>
           </Stack>
         </Stack>
