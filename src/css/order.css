@@ -1,229 +1,350 @@
-
 .order-page {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f8f8ff;
+    width: 100%;
+    height: auto;
 }
 
 .order-page .order-container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 50px;
-  margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
 }
 
-.order-left {
-  width: 860px;
-  height: auto;
+/** order-left */
+
+.order-page .order-container .order-left {
+    width: 860px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.order-right {
-  width: 360px;
-  height: auto;
-  margin-top: 86px;
-  margin-left: 30px;
-  display: flex;
-  flex-direction: column;
+.order-page .order-container .order-left .order-nav-frame {
+    margin-top: 50px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.order-nav-frame {
-  background: #f9f9f9;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: inset 0px -2px 4px rgba(0, 0, 0, 0.1);
+.order-page .order-container .order-left .order-nav-frame .table-list {
+    font-family: Commissioner;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0%;
+    text-align: left;
+    color: rgb(52, 52, 52);
 }
 
-.table_list {
-  font-weight: bold;
-  font-size: 16px;
+.order-page .order-container .order-main-content {
+    margin-top: 20px;
+    width: 821px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    
 }
 
-.order-info-box {
-  background: #e7e2e2;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  width: 372px;
-  height: 308px;
+.order-page .order-container .order-main-content .order-main-box {
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%;
+    max-height: 285px;
+
+    border-radius: 16px;
+    box-shadow: inset 0px 4px 16px 0px rgba(242, 189, 87, 0.04),inset 0px 4px 10px 9px rgb(211, 211, 231),-12px 12px 4px 0px rgb(186, 186, 191);
+    background: rgb(248, 248, 254);
 }
 
-.order-user-img {
-
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.order-page .order-container .order-main-content .order-main-box .order-box-scroll {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-.order-user-avatar {
-  width: 117px;
-  height: 112px;
-  border-radius: 50%;
-  border: 3px solid #d1d1d1;
+.order-page .order-container .order-main-content .order-main-box .order-box-scroll .orders-name-price {
+    position: relative;
+    margin-left: 50px;
+    margin-top: 15px;
+    height: 47px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.order-user-prof-img {
-  position: absolute;
-  bottom: 5px;
-  right: 110px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
+.order-page .order-container .order-main-content .order-main-box .order-box-scroll .orders-name-price .order-dish-img {
+    position: relative;
+    margin-right: 20px;
+    width: 50px;
+    height: 47px;
+    background-size: cover;
+    border-radius: 29px;
 }
 
-.order-user-name {
-  display: block;
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 10px;
+.order-page .order-container .order-main-content .order-main-box .order-box-scroll .orders-name-price .title-dish {
+    position: relative;
+    width: 260px;
+    height: 36px;
+    
+    font-family: Commissioner;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0%;
+    text-align: left;
+    color: rgb(0, 0, 0);
 }
 
-.order-user-prof {
-  display: block;
-  font-size: 20px;
-  color: gray;
-  margin-top: 4px;
+.order-page .order-container .order-main-content .order-main-box .order-box-scroll .orders-name-price .price-box {
+     position: relative ;
+     margin-left: 150px;
+     width: 170px;
+     height: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+
+     color: rgba(38, 38, 38, 0.88);
+     font-family: Poppins;
+     font-size: 18px;
+     font-weight: 400;
+     line-height: 27px;
+     letter-spacing: 0%;
+     text-align: left;
 }
 
-.line {
-  width: 100%;
-  height: 2px;
-  background-color: #080101;
-  border: none;
-  margin-top: 50px;
+.order-page .order-container .order-main-content .order-main-box .total-price-box {
+     position: relative;
+     margin-bottom: 10px;
+     width: 100%;
+     height: 41px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     border-radius: 5px;
 }
 
-
-/* process uchun */
-.order-main-box {
-  background: hsl(0, 12%, 95%);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  /* background: #4caf50; */
-  width: 821px;
-  height: 360px;
+.order-page .order-container .order-main-content .order-main-box .total-price-box .box-total {
+     position: relative;
+     margin-left: -30px;
+     width: 535px;
+     height: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
 }
 
-.orders-name-price {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+.order-page .order-container .order-main-content .order-main-box .total-price-box .box-total p {
+    margin-left: 20px;
 
+    color: rgb(0, 0, 0);
+    font-family: Commissioner;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0%;
+    text-align: center;
 }
 
-.order-dish-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  object-fit: cover;
+.order-page .order-container .order-main-content .order-main-box .total-price-box .cancel-button {
+     width: 93px;
+     height: 36px;
+      
+     border-radius: 10px;
+     background: rgb(210, 182, 140);
 }
 
-.title-dish {
-  font-size: 18px;
-  font-weight: bold;
-  flex-grow: 1;
+.order-page .order-container .order-main-content .order-main-box .total-price-box .pay-button {
+     width: 93px;
+     height: 36px;
+     
+     border-radius: 10px;
+     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+     background: rgb(112, 180, 91);
 }
 
-.price-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
+.order-page .order-container .order-main-content .order-main-box .total-price-box Button {
+    color: rgb(255, 255, 255);
 }
 
-.total-price-box {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.order-page .order-container .order-main-content .order-main-box .total-price-box  .verify-button {
+    margin-left: -10px;
+    width: 162px;
+    height: 36px;
+    border-radius: 10px;
+    background: #0288d1;
+    box-shadow: 0px 4px 4px #00000040;
 }
 
-.box-total {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  font-weight: bold;
+.order-page .order-container .order-main-content .order-main-box .total-price-box  .data-compl {
+    margin-left: -40px;
+    margin-top: -1px;
+    color: rgb(0, 0, 0);
+    font-family: Commissioner;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0%;
+    text-align: center;
 }
 
+/** Order-right*/
 
-.data-compl {
-  font-size: 14px;
-  color: gray;
-  font-weight: bold;
-}
+.order-page .order-container .order-right {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 86px;
+    width: 360px;
+  }
+  
+  .order-page .order-container .order-right .order-info-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .order-page .order-container .order-right .order-info-box .member-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .order-page .order-container .order-right .order-user-img {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .order-page .order-container .order-right .order-info-box .order-user-img .order-user-avatar {
+    height: 112px;
+    width: 117px;
+    border-radius: 37px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  
+  .order-page .order-container .order-right .order-info-box .order-user-icon-box {
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 81%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    border-radius: 37px;
+    background: #00000054;
+  }
+  
+  .order-page .order-container .order-right .order-user-icon-box .order-user-prof-img {
+    filter: brightness(0) invert(1);
+  }
+  
+  .order-page .order-container .order-right .order-info-box .order-user-name {
+    font-family: Commissioner;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    margin-top: 10px;
+    color: #08090d;
+  }
+  
+  .order-page .order-container .order-right .order-info-box .order-user-prof {
+    font-family: Commissioner;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    color: #a1a1a1;
+  }
+  
+  .order-page .order-container .order-right .order-info-box .liner {
+    margin-bottom: 8px;
+    margin-top: 40px;
+    width: 100%;
+    border: 1px solid #a1a1a1;
+  }
+  
+  .order-page .order-container .order-right .order-info-box .order-user-address {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .order-page .order-container .order-right .order-info-box .spec-address-txt {
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 5px;
+    color: #616164;
+  }
+  
+  .order-page .order-container .order-right .order-info-box {
+    margin-bottom: 25px;
+    padding: 20px;
+    width: 360px;
+    height: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    background: #f8f8ff;
+    border-radius: 16px;
+    box-shadow: 15px 14px 4px #00000040, inset -1px 0 16px 13px #18177033;
+  }
+  
+  .order-page .order-container .order-right .order-info-box .card-half-input,
+  .order-page .order-container .order-right .order-info-box .card-input {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    padding: 10px;
+    
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 22px;
 
-.verify-button {
-  background: #4262b1 !important;
-  color: white !important;
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 6px;
-  transition: 0.3s;
-}
+    background: #f5f5f5;
+    border: 0.5px solid #b3a6a6;
+    border-radius: 10px;
+    color: #434141;
 
-.verify-button:hover {
-  background: #1136b9 !important;
-}
+  }
+  
+  .order-page .order-container .order-right .order-info-box .card-half-input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 49%;
+    height: 40px;
+    
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 22px;
+    
+    background: #f5f5f5;
+    border: 0.5px solid #b3a6a6;
+    border-radius: 10px;
+    color: #434141;
+  }
+  
+  .order-page .order-container .order-right .order-info-box .cards-box {
+    margin-top: 35px;
+    width: 80%;
 
-.box{
-  margin-top: 40px;
-  width: 400px;
-  height: 400px;
-  background-color: hsl(120, 25%, 95%);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px 5px rgba(65, 64, 64, 0.718)
-}
-
-.payment-input{
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 360px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-}
-
-.box-input{
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-}
-.date-input{
-  margin-top: 50px;
-  height: 50px;
-}
-
-.cvv-input{
-  margin-top: 50px;
-  height: 50px;
-}
-
-.card-name{
-  margin-top: 50px;
-  margin-left: 15px;
-  width: 360px;
-  height: 50px;
-}
-
-.card-img{
-  margin-top: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }

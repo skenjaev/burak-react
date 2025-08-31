@@ -1,58 +1,52 @@
-// @ts-nocheck
-
-
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom/client';
+//@ts-nocheck
+import React, { Component } from "react";
 
 class Test extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      brand: "Ford",
-      model: "Mustang",
-      color: "red",
-      year: 1964
+    constructor(props) {
+      super(props);
+      this.state = {
+        brand: "Ford",
+        model: "Mustang",
+        color: "red",
+        year: 1964
+      };
+    }
+    changeColor = () => {
+      this.setState({
+        color: "blue",
+        brand: "Tesla",
+        model: "Model S",
+        year: 2023,
+      });
     };
-  }
-  changeDetail = () => {
-    this.setState({color: "blue", model: "Model S", year: "2023", brand: "Tesla"});
-   }
-
-    // lifecycle methods
 
     componentDidMount() {
       console.log("componentDidMount");
-      // runs after the first Render  => RETRIEVE DATA FROM BACKEND SERVER
+      //run after render => RETRIEVE DATA FROM BACKEND SERVER
     }
 
     componentWillUnmount() {
       console.log("componentWillUnmount");
-      // runs before componennt unmount
+      // runs before component unmount  
     }
 
-    componentDidUpdate(){
-      console.log("componentDidUpdate");
+    componentDidUpdate() {}
+    
+    render() {
+      return (
+        <div>
+          <h1>My {this.state.brand}</h1>
+          <p>
+           Color: {this.state.color} - Model: {this.state.model}
+           - from {this.state.year}.
+          </p>
+          <button
+            type="button" onClick={this.changeColor}>
+              Change color
+          </button>
+        </div>
+      );
     }
-
-  render() {
-    return (
-      <div>
-        <h1>My {this.state.brand}</h1>
-        <p>
-          Color: {this.state.color} - Model: {this.state.model} from {""}{this.state.year}
-        </p>
-        <button
-          type="button"
-          onClick={this.changeDetail}
-        >Change detail
-        </button>
-      </div>
-    );
   }
-}
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<Car />);
-
-
-export default Test;
+  export default Test;
