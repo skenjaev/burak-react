@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ProductsPageState } from "../../lib/types/screen";
-import axios from "axios";
+
 
 const initialState: ProductsPageState = {
     restaurant: null,

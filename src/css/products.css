@@ -128,7 +128,7 @@
 .products-page .products .product-wrapper {
     margin-left: 25px;
     width: 100%;
-    height: auto;
+    height: 800px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

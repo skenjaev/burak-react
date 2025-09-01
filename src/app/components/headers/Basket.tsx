@@ -4,12 +4,30 @@ import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import Menu from "@mui/material/Menu";
 import CancelIcon from "@mui/icons-material/Cancel";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useHistory } from "react-router-dom";
+import { CartItem } from "../../lib/types/search";
+import { serverApi } from "../../lib/config";
 
-export default function Basket() {
+interface BasketProps {
+  cartItems: CartItem[];
+  onAdd: (item: CartItem) => void;
+  onRemove: (item: CartItem) => void;
+  onDelete: (item: CartItem) => void;
+  onDeleteAll: () => void;
+}
+
+export default function Basket(props: BasketProps) {
+  const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
   const authMember = null;
   const history = useHistory();
+  const itemPrice: number = cartItems.reduce(
+    (a: number, c: CartItem) => a + c.quantity * c.price, 
+    0
+  );
+  const shippingCost: number = itemPrice < 100 ? 5 : 0;
+  const totalPrice = (itemPrice + shippingCost).toFixed(1);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -32,7 +50,7 @@ export default function Basket() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <Badge badgeContent={3} color="secondary">
+        <Badge badgeContent={cartItems.length} color="secondary">
           <img src={"/icons/shopping-cart.svg"} />
         </Badge>
       </IconButton>
@@ -73,33 +91,67 @@ export default function Basket() {
       >
         <Stack className={"basket-frame"}>
           <Box className={"all-check-box"}>
-            <div>Cart is empty!</div>
+            {cartItems.length === 0 ? 
+            (<div>Cart is empty!</div>
+            ) : (
+            <Stack flexDirection={"row"}>
+               <div>Cart Products:</div>
+               <DeleteForeverIcon 
+                  sx={{ml: "5px", cursor: "pointer"}}
+                  color="primary"
+                  onClick={() => onDeleteAll()}  
+               />
+            </Stack>
+            )}
+            
           </Box>
 
           <Box className={"orders-main-wrapper"}>
             <Box className={"orders-wrapper"}>
-              <Box className={"basket-info-box"}>
+              {cartItems.map((item: CartItem) => {
+              const imagePath = `${serverApi}/${item.image}`
+              return (
+                <Box className={"basket-info-box"} key={item._id}>
                 <div className={"cancel-btn"}>
-                  <CancelIcon color={"primary"} />
+                  <CancelIcon 
+                     color={"primary"} 
+                     onClick={() => onDelete(item)}
+                  />
                 </div>
-                <img src={"/img/fresh.webp"} className={"product-img"} />
-                <span className={"product-name"}>Kebab</span>
-                <p className={"product-price"}>$10 x 1</p>
+                <img src={imagePath} className={"product-img"} />
+                <span className={"product-name"}>{item.name}</span>
+                <p className={"product-price"}>${item.price} x {item.quantity}</p>
                 <Box sx={{ minWidth: 120 }}>
                   <div className="col-2">
-                    <button className="remove">-</button>{" "}
-                    <button className="add">+</button>
+                    <button 
+                       className="remove"
+                       onClick={() => onRemove(item)}
+                    >
+                      -
+                    </button>{" "}
+                    <button 
+                       className="add"
+                       onClick={() => onAdd(item)}
+                    >
+                      +
+                    </button>
                   </div>
                 </Box>
               </Box>
+              );
+            })}
             </Box>
           </Box>
+          {cartItems.length !== 0 ? (
           <Box className={"basket-order"}>
-            <span className={"price"}>Total: $100 (98 +2)</span>
+            <span className={"price"}>Total: ${totalPrice} ({itemPrice} + {shippingCost})</span>
             <Button startIcon={<ShoppingCartIcon />} variant={"contained"}>
               Order
             </Button>
           </Box>
+           ) : (
+            ""
+            )}
         </Stack>
       </Menu>
     </Box>
