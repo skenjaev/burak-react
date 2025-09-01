@@ -1,4 +1,3 @@
-
 export const plans = [
 	{
 		title: 'Hot Discount Days',

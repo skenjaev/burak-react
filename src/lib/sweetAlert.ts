@@ -1,6 +1,6 @@
 /** SweetAlertHandling **/
 import Swal from "sweetalert2";
-import { Messages } from "../lib/config";
+import { Messages } from "./config";
 
 export const sweetErrorHandling = async (err: any) => {
   const error = err.response?.data ?? err;

@@ -1,350 +1,313 @@
 .order-page {
-    width: 100%;
-    height: auto;
+  background-color: #f9f9f9;
+  padding: 20px;
 }
 
 .order-page .order-container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
-/** order-left */
-
-.order-page .order-container .order-left {
-    width: 860px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
+.order-left {
+  flex: 3;
 }
 
-.order-page .order-container .order-left .order-nav-frame {
-    margin-top: 50px;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.order-right {
+  flex: 1;
+  padding: 20px;
+  margin-top: 3rem;
 }
 
-.order-page .order-container .order-left .order-nav-frame .table-list {
-    font-family: Commissioner;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 36px;
-    letter-spacing: 0%;
-    text-align: left;
-    color: rgb(52, 52, 52);
+.order-user-img {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 450px;
+  height: 400px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  border: 7px solid rgb(220, 220, 238);
+  border-bottom: 5px solid rgb(220, 220, 238);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: -12px 12px 4px 0 #bababf, 0 4px 10px 9px #d3d3e7 inset,
+    0 4px 16px 0 rgba(242, 189, 87, 0.04) inset;
 }
 
-.order-page .order-container .order-main-content {
-    margin-top: 20px;
-    width: 821px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    
+.order-user-img1 {
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
-.order-page .order-container .order-main-content .order-main-box {
-    position: relative;
-    margin-bottom: 25px;
-    width: 100%;
-    max-height: 285px;
-
-    border-radius: 16px;
-    box-shadow: inset 0px 4px 16px 0px rgba(242, 189, 87, 0.04),inset 0px 4px 10px 9px rgb(211, 211, 231),-12px 12px 4px 0px rgb(186, 186, 191);
-    background: rgb(248, 248, 254);
+.order-user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 30%;
 }
 
-.order-page .order-container .order-main-content .order-main-box .order-box-scroll {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+.order-user-icon-box {
+  position: absolute;
+  bottom: 0;
+  right: 30%;
+  top: 75%;
 }
 
-.order-page .order-container .order-main-content .order-main-box .order-box-scroll .orders-name-price {
-    position: relative;
-    margin-left: 50px;
-    margin-top: 15px;
-    height: 47px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.order-user-prof-img {
+  width: 30px;
 }
 
-.order-page .order-container .order-main-content .order-main-box .order-box-scroll .orders-name-price .order-dish-img {
-    position: relative;
-    margin-right: 20px;
-    width: 50px;
-    height: 47px;
-    background-size: cover;
-    border-radius: 29px;
+.liner {
+  text-align: center;
+  margin-top: 10px;
 }
 
-.order-page .order-container .order-main-content .order-main-box .order-box-scroll .orders-name-price .title-dish {
-    position: relative;
-    width: 260px;
-    height: 36px;
-    
-    font-family: Commissioner;
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 36px;
-    letter-spacing: 0%;
-    text-align: left;
-    color: rgb(0, 0, 0);
+.order-user-name {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.order-page .order-container .order-main-content .order-main-box .order-box-scroll .orders-name-price .price-box {
-     position: relative ;
-     margin-left: 150px;
-     width: 170px;
-     height: 100%;
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     align-items: center;
-
-     color: rgba(38, 38, 38, 0.88);
-     font-family: Poppins;
-     font-size: 18px;
-     font-weight: 400;
-     line-height: 27px;
-     letter-spacing: 0%;
-     text-align: left;
+.order-user-prof {
+  font-size: 14px;
+  color: gray;
 }
 
-.order-page .order-container .order-main-content .order-main-box .total-price-box {
-     position: relative;
-     margin-bottom: 10px;
-     width: 100%;
-     height: 41px;
-     display: flex;
-     flex-direction: row;
-     justify-content: space-around;
-     border-radius: 5px;
+.order-user-location {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+.horizantal {
+  width: 100%;
+  height: 2px;
+  margin-top: 18px;
 }
 
-.order-page .order-container .order-main-content .order-main-box .total-price-box .box-total {
-     position: relative;
-     margin-left: -30px;
-     width: 535px;
-     height: 100%;
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
+/* Card */
+
+.order-page .order-container .order-right .card-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  border: 7px solid rgb(220, 220, 238);
+  border-bottom: 5px solid rgb(220, 220, 238);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  box-shadow: -12px 12px 4px 0 #bababf, 0 4px 10px 9px #d3d3e7 inset,
+    0 4px 16px 0 rgba(242, 189, 87, 0.04) inset;
+}
+.order-page .order-container .order-right .card-box .card-input {
+  box-sizing: border-box;
+  border: 1px solid rgb(180, 170, 170);
+  border-radius: 5px;
 }
 
-.order-page .order-container .order-main-content .order-main-box .total-price-box .box-total p {
-    margin-left: 20px;
-
-    color: rgb(0, 0, 0);
-    font-family: Commissioner;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 36px;
-    letter-spacing: 0%;
-    text-align: center;
+.order-page .order-container .order-right .card-box .card-details {
+  display: flex;
+  gap: 12px;
 }
 
-.order-page .order-container .order-main-content .order-main-box .total-price-box .cancel-button {
-     width: 93px;
-     height: 36px;
-      
-     border-radius: 10px;
-     background: rgb(210, 182, 140);
+.order-page
+  .order-container
+  .order-right
+  .card-box
+  .card-input
+  .MuiInputBase-root {
+  background-color: white;
 }
 
-.order-page .order-container .order-main-content .order-main-box .total-price-box .pay-button {
-     width: 93px;
-     height: 36px;
-     
-     border-radius: 10px;
-     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-     background: rgb(112, 180, 91);
+.order-page .order-container .order-right .card-box .payment-methods {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.order-page .order-container .order-main-content .order-main-box .total-price-box Button {
-    color: rgb(255, 255, 255);
+.order-page .order-container .order-right .card-box .payment-methods img {
+  width: 45px;
+  height: auto;
+  object-fit: contain;
 }
 
-.order-page .order-container .order-main-content .order-main-box .total-price-box  .verify-button {
-    margin-left: -10px;
-    width: 162px;
-    height: 36px;
-    border-radius: 10px;
-    background: #0288d1;
-    box-shadow: 0px 4px 4px #00000040;
+/* Paused Orders  */
+
+.order-page .order-container .order-left .order-main-box {
+  background: rgb(252, 250, 250);
+  padding: 10px 40px;
+  margin-bottom: 20px;
+  width: 950px;
+  border-radius: 15px;
+  border: 7px solid rgb(220, 220, 238);
+  border-bottom: 5px solid rgb(220, 220, 238);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: -12px 12px 4px 0 #bababf, 0 4px 10px 9px #d3d3e7 inset,
+    0 4px 16px 0 rgba(242, 189, 87, 0.04) inset;
 }
 
-.order-page .order-container .order-main-content .order-main-box .total-price-box  .data-compl {
-    margin-left: -40px;
-    margin-top: -1px;
-    color: rgb(0, 0, 0);
-    font-family: Commissioner;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 36px;
-    letter-spacing: 0%;
-    text-align: center;
+.order-page .order-container .order-left .order-box-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/** Order-right*/
+.order-page .order-container .order-left .orders-name-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
 
-.order-page .order-container .order-right {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    margin-left: 30px;
-    margin-top: 86px;
-    width: 360px;
-  }
-  
-  .order-page .order-container .order-right .order-info-box {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .order-page .order-container .order-right .order-info-box .member-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .order-page .order-container .order-right .order-user-img {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
-  
-  .order-page .order-container .order-right .order-info-box .order-user-img .order-user-avatar {
-    height: 112px;
-    width: 117px;
-    border-radius: 37px;
-    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  
-  .order-page .order-container .order-right .order-info-box .order-user-icon-box {
-    padding: 5px;
-    position: absolute;
-    right: 0;
-    top: 81%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    border-radius: 37px;
-    background: #00000054;
-  }
-  
-  .order-page .order-container .order-right .order-user-icon-box .order-user-prof-img {
-    filter: brightness(0) invert(1);
-  }
-  
-  .order-page .order-container .order-right .order-info-box .order-user-name {
-    font-family: Commissioner;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
-    margin-top: 10px;
-    color: #08090d;
-  }
-  
-  .order-page .order-container .order-right .order-info-box .order-user-prof {
-    font-family: Commissioner;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
-    color: #a1a1a1;
-  }
-  
-  .order-page .order-container .order-right .order-info-box .liner {
-    margin-bottom: 8px;
-    margin-top: 40px;
-    width: 100%;
-    border: 1px solid #a1a1a1;
-  }
-  
-  .order-page .order-container .order-right .order-info-box .order-user-address {
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .order-page .order-container .order-right .order-info-box .spec-address-txt {
-    font-family: "DM Sans";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    margin-left: 5px;
-    color: #616164;
-  }
-  
-  .order-page .order-container .order-right .order-info-box {
-    margin-bottom: 25px;
-    padding: 20px;
-    width: 360px;
-    height: auto;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-    background: #f8f8ff;
-    border-radius: 16px;
-    box-shadow: 15px 14px 4px #00000040, inset -1px 0 16px 13px #18177033;
-  }
-  
-  .order-page .order-container .order-right .order-info-box .card-half-input,
-  .order-page .order-container .order-right .order-info-box .card-input {
-    width: 100%;
-    height: 40px;
-    margin-top: 10px;
-    padding: 10px;
-    
-    font-family: Nunito;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 22px;
+.order-page .order-container .order-left .order-dish-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  margin-left: 2rem;
+}
 
-    background: #f5f5f5;
-    border: 0.5px solid #b3a6a6;
-    border-radius: 10px;
-    color: #434141;
+.order-page .order-container .order-left .title-dish {
+  font-weight: 600;
+  font-size: 20px;
+  color: #5b5757;
+  margin-right: auto;
+  font-weight: 500;
+}
 
-  }
-  
-  .order-page .order-container .order-right .order-info-box .card-half-input {
-    margin-top: 10px;
-    padding: 10px;
-    width: 49%;
-    height: 40px;
-    
-    font-family: Nunito;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 22px;
-    
-    background: #f5f5f5;
-    border: 0.5px solid #b3a6a6;
-    border-radius: 10px;
-    color: #434141;
-  }
-  
-  .order-page .order-container .order-right .order-info-box .cards-box {
-    margin-top: 35px;
-    width: 80%;
+.order-page .order-container .order-left .price-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 18px;
+  color: #444;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  margin-right: 4rem;
+}
+.order-page .order-container .order-left .product_price {
+  display: flex;
+  flex-direction: row;
+  margin-left: 150px;
+  gap: 15px;
+  color: rgb(52, 52, 52);
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0%;
+}
+
+/* Price */
+
+.order-page .order-container .order-left .order-box-scroll .product-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 18px;
+}
+.order-page
+  .order-container
+  .order-left
+  .order-box-scroll
+  .product-price
+  .products {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.order-page .order-container .order-left .price-box img {
+  width: 16px;
+  height: 16px;
+}
+
+.order-page .order-container .order-left .order-box-scroll .summary-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.order-page .order-container .order-left .data-compl {
+  font-size: 12px;
+  color: #888;
+  margin-top: 10px;
+}
+
+.order-page .order-container .order-left .payment-button {
+  margin-top: 12px;
+  max-width: 100px;
+  height: 36px;
+  margin-right: -1px;
+  margin-left: 1rem;
+  background: #70b45b;
+  color: white;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.order-page .order-container .order-left .cansel-button {
+  margin-top: 12px;
+  max-width: 100px;
+  font-weight: bold;
+  height: 36px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  width: 100%;
+
+  background: #d2b68c;
+}
+.order-page .order-container .order-left .verify-buttonn {
+  margin-top: 12px;
+  max-width: 100px;
+  font-weight: bold;
+  height: 36px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  width: 100%;
+  background: #3a87cb;
+}
+
+.order-page .order-container .order-left .cancel-button {
+  background-color: #d6b28b;
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 8px 18px;
+  border-radius: 8px;
+}
+
+.order-page .order-container .order-left .total-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.order-page .order-container .order-left .action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}

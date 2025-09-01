@@ -27,16 +27,14 @@ export default function UserPage() {
                 flexDirection={"column"}
                 alignItems={"center"}
               >
-                <div className={"order-user-img"}>
+                <div className="order-user-img1">
                   <img
-                    src={"/icons/default-user.svg"}
-                    className={"order-user-avatar"}
+                    src="/icons/default-user.svg"
+                    className="order-user-avatar"
+                    alt="User avatar"
                   />
-                  <div className={"order-user-icon-box"}>
-                    <img src={"/icons/user-badge.svg"} />
                   </div>
-                </div>
-                <span className={"order-user-name"}>Martin</span>
+                <span className={"order-user-name"}>Senior</span>
                 <span className={"order-user-prof"}>User</span>
                 <span className={"order-user-prof"}>No address</span>
               </Box>

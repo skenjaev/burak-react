@@ -1,7 +1,6 @@
 .home-navbar {
     width: 100%;
     height: 773px;
-
     display: flex;
     background: url("/public/img/banner.webp");
     background-size: cover;
@@ -14,25 +13,23 @@
 
 .home-navbar .navbar-container .menu {
     height: 50px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.home-navbar .navbar-container .menu .brand-logo {
+.home-navbar .navbar-container .menu .brand-logo{
     width: 125px;
     height: 30px;
 }
 
 .home-navbar .navbar-container .menu .links {
-   min-width: 700px;
-
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center; 
+    min-width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .home-navbar .navbar-container .menu .links .login-button {
@@ -43,7 +40,6 @@
 .home-navbar .navbar-container .menu .user-avatar {
     width: 50px;
     height: 50px;
-
     border-radius: 24px;
 }
 
@@ -68,20 +64,19 @@
     border-bottom: solid 2px #d7b686;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
-} 
+}
 
 .home-navbar .hover-line:hover:after {
     transform: scaleX(1);
 }
 
-.home-navbar div.hover-line:after {
+.home-navbar div .hover-line:after {
     transform-origin: 0% 50%;
 }
 
 .home-navbar .navbar-container .header-frame {
     margin-top: 142px;
     height: 462px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -89,7 +84,6 @@
 
 .home-navbar .navbar-container .header-frame .detail {
     width: 510px;
-
     display: flex;
     flex-direction: column;
 }
@@ -97,63 +91,62 @@
 .home-navbar .navbar-container .header-frame .detail .head-main-txt {
     width: 450px;
     height: 150px;
-
-    font-family: Roboto Serif;
+    font-family: "Roboto Serif";
     font-size: 50px;
+    font-style: normal;
     font-weight: 500;
     line-height: normal;
-    letter-spacing: -1.5%;
-    color: rgb(248, 248, 255);
+    letter-spacing: -0.75px;
+    color: #f8f8ff;
 }
 
 .home-navbar .navbar-container .header-frame .detail .wel-txt {
     width: 510px;
     height: 42px;
-
-    font-family: Roboto Serif;
+    font-family: "Roboto Serif";
     font-size: 36px;
+    font-style: normal;
     font-weight: 400;
-    line-height: 42px;
-    letter-spacing: -1.5%;
-    color: rgb(215, 182, 134);
+    line-height: normal;
+    letter-spacing: -0.54px;
+    color: #d7b686;
 }
 
 .home-navbar .navbar-container .header-frame .detail .service-txt {
     margin-top: 23px;
     width: 153px;
-    height: 42px;
-
-    font-family: Roboto Serif;
+    height: 23px;
+    font-family: "Roboto Serif";
     font-size: 20px;
+    font-style: normal;
     font-weight: 400;
-    line-height: 23px;
-    letter-spacing: -1.5%;
-    color: rgb(213, 213, 213);
+    line-height: normal;
+    letter-spacing: -0.3px;
+    color: #d5d5d5;
 }
 
-.home-navbar .navbar-container .header-frame .detail .signup {
+.home-navbar .navbar-container .detail .signup {
     margin-top: 73px;
 }
 
-.home-navbar .navbar-container .header-frame .detail .signup-botton {
+.home-navbar .navbar-container .detail .signup .signup-button {
     width: 210px;
     height: 60px;
-    
     border-radius: 4px;
+    background: #1976d2;
+    text-align: center;
     font-family: Poppins;
     font-size: 17px;
+    font-style: normal;
     font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 0%;
-    background: #1976d2;
-    color: rgb(248, 248, 255);
+    line-height: normal;
+    color: #d5d5d5;
 }
 
 .home-navbar .navbar-container .logo-frame {
     margin-top: 43px;
     width: 690px;
     height: 419px;
-
 }
 
 .home-navbar .navbar-container .logo-frame .logo-img {
@@ -165,12 +158,16 @@
     filter: invert(25%);
 }
 
-/** OTHER NAVBAR */
+
+
+
+
+
+
 
 .other-navbar {
     width: 100%;
     height: 400px;
-
     display: flex;
     background: url("/public/img/banner.webp");
     background-size: cover;
@@ -182,25 +179,23 @@
 
 .other-navbar .navbar-container .menu {
     height: 50px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.other-navbar .navbar-container .menu .brand-logo {
+.other-navbar .navbar-container .menu .brand-logo{
     width: 125px;
     height: 30px;
 }
 
 .other-navbar .navbar-container .menu .links {
-   min-width: 700px;
-
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center; 
+    min-width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .other-navbar .navbar-container .menu .links .login-button {
@@ -211,7 +206,6 @@
 .other-navbar .navbar-container .menu .user-avatar {
     width: 50px;
     height: 50px;
-
     border-radius: 24px;
 }
 
@@ -236,17 +230,18 @@
     border-bottom: solid 2px #d7b686;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
-} 
+}
 
 .other-navbar .hover-line:hover:after {
     transform: scaleX(1);
 }
 
-.other-navbar div.hover-line:after {
+.other-navbar div .hover-line:after {
     transform-origin: 0% 50%;
 }
 
-/**  BASKET */
+
+/* BASKET */
 
 .basket-frame {
     position: relative;
@@ -381,5 +376,3 @@
     flex-direction: column;
   }
   
-
-

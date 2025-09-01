@@ -9,7 +9,7 @@ export function Settings() {
         <img src={"/icons/default-user.svg"} className={"mb-image"} />
         <div className={"media-change-box"}>
           <span>Upload image</span>
-          <p>JPG, JPEG, PNG formats only!</p>
+          <p>JPG, JPEG, PNG, WEBP formats only!</p>
           <div className={"up-del-box"}>
             <Button component="label">
               <CloudDownloadIcon />
@@ -24,8 +24,8 @@ export function Settings() {
           <input
             className={"spec-input mb-nick"}
             type="text"
-            placeholder={"Martin"}
-            value={"Martin"}
+            placeholder={"Senior"}
+            value={"Senior"}
             name="memberNick"
           />
         </div>
@@ -37,7 +37,7 @@ export function Settings() {
             className={"spec-input mb-phone"}
             type="text"
             placeholder={"no phone"}
-            value={"821024694424"}
+            value={"821032705995"}
             name="memberPhone"
           />
         </div>
