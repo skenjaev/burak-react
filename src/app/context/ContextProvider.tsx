@@ -1,33 +1,25 @@
 import React, { ReactNode, useState } from "react";
 import Cookies from "universal-cookie";
-import { Member } from "../../lib/types/member";
-import { GlobalContext } from "../hooks/useGlobals";
+import { Member } from "../lib/types/member";
+import { GlobalContext } from "../hooks/useGlobal";
 
-const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const cookies = new Cookies();
+const ContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
+   const cookies = new Cookies();
+   if(!cookies.get("accessToken")) localStorage.removeItem("memberData");
 
-  const token = cookies.get("accessToken") ?? cookies.get("access_token");
-  const canSeeCookie = token !== undefined;
-  if (canSeeCookie && !token) {
-    localStorage.removeItem("memberData");
-  }
+   const [authMember, setAuthMember] = useState<Member | null>(
+    localStorage.getItem("memberData") 
+    ? JSON.parse(localStorage.getItem("memberData") as string) 
+    : null
+   ); 
 
-  const [authMember, setAuthMember] = useState<Member | null>(() => {
-    const raw = localStorage.getItem("memberData");
-    if (!raw) return null;
-    try {
-      return JSON.parse(raw) as Member;
-    } catch {
-      localStorage.removeItem("memberData");
-      return null;
-    }
-  });
+   const [orderBuilder, setOrderBuilder] = useState<Date>(new Date());
 
-  return (
-    <GlobalContext.Provider value={{ authMember, setAuthMember }}>
-      {children}
-    </GlobalContext.Provider>
-  );
-};
+   console.log("=== verify ===");
+
+   return(<GlobalContext.Provider value={{ authMember, setAuthMember, orderBuilder, setOrderBuilder }}>
+    {children}
+    </GlobalContext.Provider>);  
+}
 
 export default ContextProvider;

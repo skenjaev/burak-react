@@ -2,6 +2,7 @@ import { createTheme } from '@mui/material/styles';
 import { common } from '@mui/material/colors';
 import shadow from './shadow';
 import typography from './typography';
+import { maxWidth } from '@mui/system';
 
 /**
  * LIGHT THEME (DEFAULT)
@@ -10,7 +11,7 @@ const light = {
 	palette: {
 		type: 'light',
 		background: {
-			default: "#f8f8ff",
+			default: '#f8f8ff',
 			paper: common.white,
 		},
 		primary: {
@@ -47,7 +48,6 @@ const light = {
 };
 
 // A custom theme for this app
-
 let theme = createTheme(light);
 theme = createTheme(theme, {
 	components: {
@@ -62,6 +62,5 @@ theme = createTheme(theme, {
 		},
 	},
 });
-
 
 export default theme;

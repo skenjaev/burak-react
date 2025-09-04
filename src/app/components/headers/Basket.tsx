@@ -4,11 +4,16 @@ import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import Menu from "@mui/material/Menu";
 import CancelIcon from "@mui/icons-material/Cancel";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useHistory } from "react-router-dom";
-import { CartItem } from "../../../lib/types/search";
-import { serverApi } from "../../../lib/config";
+import { CartItem } from "../../lib/types/search";
+import { Messages, serverApi } from "../../lib/config";
+import { sweetErrorHandling } from "../../lib/sweetAlert";
+import { useGlobals } from "../../hooks/useGlobal";
+import { Message } from "@mui/icons-material";
+import OrderService from "../../services/OrderService";
+import { create } from "domain";
 
 interface BasketProps {
   cartItems: CartItem[];
@@ -20,14 +25,14 @@ interface BasketProps {
 
 export default function Basket(props: BasketProps) {
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
-  const authMember = null;
+  const { authMember, setOrderBuilder } = useGlobals();
   const history = useHistory();
-  const itemsPrice: number = cartItems.reduce(
-    (a: number, c: CartItem) => a + c.quantity * c.price,
+  const itemPrice: number = cartItems.reduce(
+    (a: number, c: CartItem) => a + c.quantity * c.price, 
     0
   );
-  const shippingCost: number = itemsPrice < 100 ? 5 : 0;
-  const totalPrice = (itemsPrice + shippingCost).toFixed(1);
+  const shippingCost: number = itemPrice < 100 ? 5 : 0;
+  const totalPrice = (itemPrice + shippingCost).toFixed(1);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -39,6 +44,25 @@ export default function Basket(props: BasketProps) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const proceedOrderHandler = async () => {
+    try{
+      handleClose();
+      if(!authMember) throw new Error(Messages.error2);
+      
+      const order = new OrderService();
+      await order.createOrder(cartItems);
+      
+      onDeleteAll();
+
+      setOrderBuilder(new Date());
+      history.push("/orders");
+
+    } catch(err) {
+      console.log(err);
+      sweetErrorHandling(err).then();
+    }
+  }
 
   return (
     <Box className={"hover-line"}>
@@ -91,67 +115,67 @@ export default function Basket(props: BasketProps) {
       >
         <Stack className={"basket-frame"}>
           <Box className={"all-check-box"}>
-            {cartItems.length === 0 ? (
-              <div>Cart is empty!</div>
+            {cartItems.length === 0 ? 
+            (<div>Cart is empty!</div>
             ) : (
-              <Stack flexDirection={"row"}>
-                <div>Cart Products:</div>
-                <DeleteForeverIcon
-                  sx={{ ml: "5px", cursor: "pointer" }}
-                  color={"primary"}
-                  onClick={() => onDeleteAll()}
-                />
-              </Stack>
+            <Stack flexDirection={"row"}>
+               <div>Cart Products:</div>
+               <DeleteForeverIcon 
+                  sx={{ml: "5px", cursor: "pointer"}}
+                  color="primary"
+                  onClick={() => onDeleteAll()}  
+               />
+            </Stack>
             )}
+            
           </Box>
 
           <Box className={"orders-main-wrapper"}>
             <Box className={"orders-wrapper"}>
               {cartItems.map((item: CartItem) => {
-                const imagePath = `${serverApi}/${item.image}`;
-                return (
-                  <Box className={"basket-info-box"} key={item._id}>
-                    <div className={"cancel-btn"}>
-                      <CancelIcon
-                        color={"primary"}
-                        onClick={() => onDelete(item)}
-                      />
-                    </div>
-                    <img src={imagePath} className={"product-img"} />
-                    <span className={"product-name"}>{item.name}</span>
-                    <p className={"product-price"}>
-                      ${item.price} x {item.quantity}
-                    </p>
-                    <Box sx={{ minWidth: 120 }}>
-                      <div className="col-2">
-                        <button
-                          onClick={() => onRemove(item)}
-                          className="remove"
-                        >
-                          -
-                        </button>{" "}
-                        <button onClick={() => onAdd(item)} className="add">
-                          +
-                        </button>
-                      </div>
-                    </Box>
-                  </Box>
-                );
-              })}
+              const imagePath = `${serverApi}/${item.image}`
+              return (
+                <Box className={"basket-info-box"} key={item._id}>
+                <div className={"cancel-btn"}>
+                  <CancelIcon 
+                     color={"primary"} 
+                     onClick={() => onDelete(item)}
+                  />
+                </div>
+                <img src={imagePath} className={"product-img"} />
+                <span className={"product-name"}>{item.name}</span>
+                <p className={"product-price"}>${item.price} x {item.quantity}</p>
+                <Box sx={{ minWidth: 120 }}>
+                  <div className="col-2">
+                    <button 
+                       className="remove"
+                       onClick={() => onRemove(item)}
+                    >
+                      -
+                    </button>{" "}
+                    <button 
+                       className="add"
+                       onClick={() => onAdd(item)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </Box>
+              </Box>
+              );
+            })}
             </Box>
           </Box>
           {cartItems.length !== 0 ? (
-            <Box className={"basket-order"}>
-              <span className={"price"}>
-                Total: ${totalPrice} ({itemsPrice} + {shippingCost})
-              </span>
-              <Button startIcon={<ShoppingCartIcon />} variant={"contained"}>
-                Order
-              </Button>
-            </Box>
-          ) : (
+          <Box className={"basket-order"}>
+            <span className={"price"}>Total: ${totalPrice} ({itemPrice} + {shippingCost})</span>
+            <Button onClick={proceedOrderHandler} startIcon={<ShoppingCartIcon />} variant={"contained"}>
+              Order
+            </Button>
+          </Box>
+           ) : (
             ""
-          )}
+            )}
         </Stack>
       </Menu>
     </Box>
